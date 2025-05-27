@@ -1,4 +1,3 @@
-# Gerekli kütüphaneleri içe aktar
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.cluster import KMeans, DBSCAN, AgglomerativeClustering
@@ -105,7 +104,7 @@ def il_sirali_ozet(il_adi):
             sonuc.append((kolon, puan, sira))
     return pd.DataFrame(sonuc, columns=["Kategori", "Puan", "Sıra"])
 
-# 15. Benzer il öneri sistemi (Kosinüs benzerliği)
+# 15. Benzer il öneri sistemi oluşturmak için kosinüs benzerliğinden yararlanacağım
 X_df = pd.DataFrame(X_scaled, index=iller)
 benzerlik_matrisi = pd.DataFrame(cosine_similarity(X_df), index=iller, columns=iller)
 
